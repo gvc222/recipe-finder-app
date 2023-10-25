@@ -32,6 +32,7 @@ useEffect(() => {
   // for Example, if you put [counter], it will run when there are changes to the counter
   // remember, you can only fetch from the API i think 10 times a minute or something? so dont rerender each time
   //useEffect to fetch data everytime I click the search button
+  // eslint-disable-next-line
 }, [query])
 
 const updateSearch = (e) => {
