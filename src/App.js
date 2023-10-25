@@ -1,12 +1,11 @@
 import './App.css';
 import React, { useEffect, useState } from 'react';
 import { Recipe } from './Components/Recipe';
+const API_KEY = process.env.REACT_APP_API_KEY;
+const API_ID = process.env.REACT_APP_API_ID;
 
-const APP_ID = "ea718672";
-const APP_KEY = "ae79e78206bbbfad369305b7e080da91";
-// /"https://api.edamam.com/api/recipes/v2?type=public&app_id=ea718672&app_key=ae79e78206bbbfad369305b7e080da91"
+console.log(API_KEY)
 
-// `https://api.edamam.com/search?q=chicken&app_id=${APP_ID}&app_key=${APP_KEY}&from=0&to=3&calories=591-722&health=alcohol-free`
 const App = () => {
   const [ recipes, setRecipes ] = useState([]);
   //the finished "text" that I put in the search input
@@ -15,7 +14,7 @@ const App = () => {
 
 //async
 const getRecipes = async () => {
-  const response = await fetch(`https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}`);
+  const response = await fetch(`https://api.edamam.com/search?q=${query}&app_id=${API_ID}&app_key=${API_KEY}`);
   // formats api
   const data = await response.json();
   // log to console to check data being fetched
